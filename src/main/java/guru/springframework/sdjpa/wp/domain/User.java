@@ -71,6 +71,17 @@ public class User {
     @JoinColumn(name = "user_id")
     private Set<UserMeta> userMetaSet;
 
+    @OneToMany(mappedBy = "user")
+    private Set<Comment> comments;
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
+    }
+
     public Set<UserMeta> getUserMetaSet() {
         return userMetaSet;
     }
