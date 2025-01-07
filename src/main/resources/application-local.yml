@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: wpuser
+    url: jdbc:mysql://127.0.0.1:3306/wp?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    password: password
+  liquibase:
+    user: wpadmin
+    password: password
+  sql:
+    init:
+      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: validate
