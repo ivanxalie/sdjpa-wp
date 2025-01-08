@@ -21,7 +21,6 @@ public class CommentMeta {
     private Comment comment;
 
     @Size(max = 255)
-    @Column(columnDefinition = "longtext")
     private String metaKey;
 
     @Lob
