@@ -70,11 +70,9 @@ public class User {
     @NotBlank
     private String displayName;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
+    @OneToMany(mappedBy = "user")
     private Set<UserMeta> userMetas = new HashSet<>();
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
+    @OneToMany(mappedBy = "user")
     private Set<Comment> comments = new HashSet<>();
 }
