@@ -1,14 +1,13 @@
 package guru.springframework.sdjpa.wp.domain;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@Builder
 @Table(name = "wp_usermeta")
 public class UserMeta {
 
@@ -18,6 +17,8 @@ public class UserMeta {
     private Long id;
 
     private Long userId;
+
+    @Size(max = 255)
     private String metaKey;
 
     @Lob

@@ -12,172 +12,304 @@
     <changeSet id="create-tables" author="user">
         <createTable tableName="wp_commentmeta">
             <column name="meta_id" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="comment_id" type="BIGINT UNSIGNED" defaultValueNumeric="0">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
-            <column name="meta_key" type="VARCHAR(255)"/>
-            <column name="meta_value" type="LONGTEXT"/>
+            <column name="meta_key" type="VARCHAR(255)" />
+            <column name="meta_value" type="LONGTEXT" />
         </createTable>
 
         <createTable tableName="wp_comments">
             <column name="comment_ID" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="comment_post_ID" type="BIGINT UNSIGNED" defaultValueNumeric="0">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
-            <column name="comment_author" type="TINYTEXT"/>
-            <column name="comment_author_email" type="VARCHAR(100)" defaultValue=""/>
-            <column name="comment_author_url" type="VARCHAR(200)" defaultValue=""/>
-            <column name="comment_author_IP" type="VARCHAR(100)" defaultValue=""/>
-            <column name="comment_date" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="comment_date_gmt" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="comment_content" type="TEXT"/>
-            <column name="comment_karma" type="INT" defaultValueNumeric="0"/>
-            <column name="comment_approved" type="VARCHAR(20)" defaultValue="1"/>
-            <column name="comment_agent" type="VARCHAR(255)" defaultValue=""/>
-            <column name="comment_type" type="VARCHAR(20)" defaultValue=""/>
-            <column name="comment_parent" type="BIGINT UNSIGNED" defaultValueNumeric="0"/>
-            <column name="user_id" type="BIGINT UNSIGNED" defaultValueNumeric="0"/>
+            <column name="comment_author" type="TINYTEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_author_email" type="VARCHAR(100)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_author_url" type="VARCHAR(200)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_author_IP" type="VARCHAR(100)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_date" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_date_gmt" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_content" type="TEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_karma" type="INT" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_approved" type="VARCHAR(20)" defaultValue="1">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_agent" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_type" type="VARCHAR(20)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_parent" type="BIGINT UNSIGNED" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_id" type="BIGINT UNSIGNED" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
         </createTable>
 
         <createTable tableName="wp_links">
             <column name="link_id" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
-            <column name="link_url" type="VARCHAR(255)" defaultValue=""/>
-            <column name="link_name" type="VARCHAR(255)" defaultValue=""/>
-            <column name="link_image" type="VARCHAR(255)" defaultValue=""/>
-            <column name="link_target" type="VARCHAR(25)" defaultValue=""/>
-            <column name="link_description" type="VARCHAR(255)" defaultValue=""/>
-            <column name="link_visible" type="VARCHAR(20)" defaultValue="Y"/>
-            <column name="link_owner" type="BIGINT UNSIGNED" defaultValueNumeric="1"/>
-            <column name="link_rating" type="INT" defaultValueNumeric="0"/>
-            <column name="link_updated" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="link_rel" type="VARCHAR(255)" defaultValue=""/>
-            <column name="link_notes" type="MEDIUMTEXT"/>
-            <column name="link_rss" type="VARCHAR(255)" defaultValue=""/>
+            <column name="link_url" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_name" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_image" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_target" type="VARCHAR(25)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_description" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_visible" type="VARCHAR(20)" defaultValue="Y">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_owner" type="BIGINT UNSIGNED" defaultValueNumeric="1">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_rating" type="INT" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_updated" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_rel" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_notes" type="MEDIUMTEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="link_rss" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
         </createTable>
 
         <createTable tableName="wp_options">
             <column name="option_id" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
-            <column name="option_name" type="VARCHAR(191)" defaultValue=""/>
-            <column name="option_value" type="LONGTEXT"/>
-            <column name="autoload" type="VARCHAR(20)" defaultValue="yes"/>
+            <column name="option_name" type="VARCHAR(191)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="option_value" type="LONGTEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="autoload" type="VARCHAR(20)" defaultValue="yes">
+                <constraints nullable="false" />
+            </column>
         </createTable>
 
         <createTable tableName="wp_postmeta">
             <column name="meta_id" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="post_id" type="BIGINT UNSIGNED" defaultValueNumeric="0">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
-            <column name="meta_key" type="VARCHAR(255)"/>
-            <column name="meta_value" type="LONGTEXT"/>
+            <column name="meta_key" type="VARCHAR(255)" />
+            <column name="meta_value" type="LONGTEXT" />
         </createTable>
 
         <createTable tableName="wp_posts">
             <column name="ID" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="post_author" type="BIGINT UNSIGNED" defaultValueNumeric="0">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
-            <column name="post_date" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="post_date_gmt" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="post_content" type="LONGTEXT"/>
-            <column name="post_title" type="TEXT"/>
-            <column name="post_excerpt" type="TEXT"/>
-            <column name="post_status" type="VARCHAR(20)" defaultValue="publish"/>
-            <column name="comment_status" type="VARCHAR(20)" defaultValue="open"/>
-            <column name="ping_status" type="VARCHAR(20)" defaultValue="open"/>
-            <column name="post_password" type="VARCHAR(255)" defaultValue=""/>
-            <column name="post_name" type="VARCHAR(200)" defaultValue=""/>
-            <column name="to_ping" type="TEXT"/>
-            <column name="pinged" type="TEXT"/>
-            <column name="post_modified" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="post_modified_gmt" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="post_content_filtered" type="LONGTEXT"/>
-            <column name="post_parent" type="BIGINT UNSIGNED" defaultValueNumeric="0"/>
-            <column name="guid" type="VARCHAR(255)" defaultValue=""/>
-            <column name="menu_order" type="INT" defaultValueNumeric="0"/>
-            <column name="post_type" type="VARCHAR(20)" defaultValue="post"/>
-            <column name="post_mime_type" type="VARCHAR(100)" defaultValue=""/>
-            <column name="comment_count" type="BIGINT" defaultValueNumeric="0"/>
+            <column name="post_date" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_date_gmt" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_content" type="LONGTEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_title" type="TEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_excerpt" type="TEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_status" type="VARCHAR(20)" defaultValue="publish">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_status" type="VARCHAR(20)" defaultValue="open">
+                <constraints nullable="false" />
+            </column>
+            <column name="ping_status" type="VARCHAR(20)" defaultValue="open">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_password" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_name" type="VARCHAR(200)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="to_ping" type="TEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="pinged" type="TEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_modified" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_modified_gmt" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_content_filtered" type="LONGTEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_parent" type="BIGINT UNSIGNED" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
+            <column name="guid" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="menu_order" type="INT" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_type" type="VARCHAR(20)" defaultValue="post">
+                <constraints nullable="false" />
+            </column>
+            <column name="post_mime_type" type="VARCHAR(100)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="comment_count" type="BIGINT" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
         </createTable>
 
         <createTable tableName="wp_term_relationships">
             <column name="object_id" type="BIGINT UNSIGNED" defaultValueNumeric="0">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="term_taxonomy_id" type="BIGINT UNSIGNED" defaultValueNumeric="0">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
-            <column name="term_order" type="INT" defaultValueNumeric="0"/>
+            <column name="term_order" type="INT" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
         </createTable>
 
         <createTable tableName="wp_term_taxonomy">
             <column name="term_taxonomy_id" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="term_id" type="BIGINT UNSIGNED" defaultValueNumeric="0">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
-            <column name="taxonomy" type="VARCHAR(32)" defaultValue=""/>
-            <column name="description" type="LONGTEXT"/>
-            <column name="parent" type="BIGINT UNSIGNED" defaultValueNumeric="0"/>
-            <column name="count" type="BIGINT" defaultValueNumeric="0"/>
+            <column name="taxonomy" type="VARCHAR(32)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="LONGTEXT">
+                <constraints nullable="false" />
+            </column>
+            <column name="parent" type="BIGINT UNSIGNED" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
+            <column name="count" type="BIGINT" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
         </createTable>
 
         <createTable tableName="wp_termmeta">
             <column name="meta_id" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="term_id" type="BIGINT UNSIGNED" defaultValueNumeric="0">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
-            <column name="meta_key" type="VARCHAR(255)"/>
-            <column name="meta_value" type="LONGTEXT"/>
+            <column name="meta_key" type="VARCHAR(255)" />
+            <column name="meta_value" type="LONGTEXT" />
         </createTable>
 
         <createTable tableName="wp_terms">
             <column name="term_id" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
-            <column name="name" type="VARCHAR(200)" defaultValue=""/>
-            <column name="slug" type="VARCHAR(200)" defaultValue=""/>
-            <column name="term_group" type="BIGINT" defaultValueNumeric="0"/>
+            <column name="name" type="VARCHAR(200)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="slug" type="VARCHAR(200)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="term_group" type="BIGINT" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
         </createTable>
 
         <createTable tableName="wp_usermeta">
             <column name="umeta_id" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="user_id" type="BIGINT UNSIGNED" defaultValueNumeric="0">
-                <constraints nullable="false"/>
+                <constraints nullable="false" />
             </column>
-            <column name="meta_key" type="VARCHAR(255)"/>
-            <column name="meta_value" type="LONGTEXT"/>
+            <column name="meta_key" type="VARCHAR(255)" />
+            <column name="meta_value" type="LONGTEXT" />
         </createTable>
 
         <createTable tableName="wp_users">
             <column name="ID" type="BIGINT UNSIGNED AUTO_INCREMENT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" nullable="false" />
             </column>
-            <column name="user_login" type="VARCHAR(60)" defaultValue=""/>
-            <column name="user_pass" type="VARCHAR(255)" defaultValue=""/>
-            <column name="user_nicename" type="VARCHAR(50)" defaultValue=""/>
-            <column name="user_email" type="VARCHAR(100)" defaultValue=""/>
-            <column name="user_url" type="VARCHAR(100)" defaultValue=""/>
-            <column name="user_registered" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="user_activation_key" type="VARCHAR(255)" defaultValue=""/>
-            <column name="user_status" type="INT" defaultValueNumeric="0"/>
-            <column name="display_name" type="VARCHAR(250)" defaultValue=""/>
+            <column name="user_login" type="VARCHAR(60)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_pass" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_nicename" type="VARCHAR(50)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_email" type="VARCHAR(100)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_url" type="VARCHAR(100)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_registered" type="DATETIME" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_activation_key" type="VARCHAR(255)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_status" type="INT" defaultValueNumeric="0">
+                <constraints nullable="false" />
+            </column>
+            <column name="display_name" type="VARCHAR(250)" defaultValue="">
+                <constraints nullable="false" />
+            </column>
         </createTable>
     </changeSet>
 
