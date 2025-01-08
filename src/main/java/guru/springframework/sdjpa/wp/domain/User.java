@@ -18,7 +18,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_login")
+    @Column(name = "user_login", length = 60)
     @Size(max = 60)
     @NotBlank
     private String login;
@@ -28,18 +28,18 @@ public class User {
     @NotBlank
     private String password;
 
-    @Column(name = "user_nicename")
+    @Column(name = "user_nicename", length = 50)
     @Size(max = 50)
     @NotBlank
     private String nicename;
 
-    @Column(name = "user_email")
+    @Column(name = "user_email", length = 100)
     @Email
     @Size(max = 100)
     @NotBlank
     private String email;
 
-    @Column(name = "user_url")
+    @Column(name = "user_url", length = 100)
     @URL
     @Size(max = 100)
     @NotBlank
@@ -59,7 +59,7 @@ public class User {
     @NotNull
     private Integer status;
 
-    @Basic(optional = false)
+    @Column(nullable = false, length = 250)
     @Size(max = 250)
     @NotBlank
     private String displayName;
