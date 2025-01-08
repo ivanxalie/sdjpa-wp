@@ -16,7 +16,8 @@ public class UserMeta {
     @Column(name = "umeta_id")
     private Long id;
 
-    private Long userId;
+    @ManyToOne
+    private User user;
 
     @Size(max = 255)
     @Column(columnDefinition = "longtext")

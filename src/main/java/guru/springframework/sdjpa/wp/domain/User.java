@@ -7,11 +7,17 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "wp_users")
+@Table(name = "wp_users", indexes = {
+        @Index(name = "user_login_key", columnList = "user_login"),
+        @Index(name = "user_nicename", columnList = "user_nicename"),
+        @Index(name = "user_email", columnList = "user_email")
+})
 public class User {
 
     @Id
@@ -63,4 +69,8 @@ public class User {
     @Size(max = 250)
     @NotBlank
     private String displayName;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private Set<UserMeta> userMetas = new HashSet<>();
 }
