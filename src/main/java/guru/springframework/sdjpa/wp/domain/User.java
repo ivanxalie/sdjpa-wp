@@ -73,4 +73,8 @@ public class User {
     @OneToMany
     @JoinColumn(name = "user_id")
     private Set<UserMeta> userMetas = new HashSet<>();
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private Set<Comment> comments = new HashSet<>();
 }
