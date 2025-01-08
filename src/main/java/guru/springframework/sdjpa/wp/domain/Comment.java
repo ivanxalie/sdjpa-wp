@@ -67,6 +67,7 @@ public class Comment {
 
     @Column(name = "comment_content", nullable = false, columnDefinition = "TEXT")
     @NotBlank
+    @Lob
     private String content;
 
     @Column(name = "comment_karma", nullable = false)
@@ -90,7 +91,7 @@ public class Comment {
 
     @OneToMany
     @JoinColumn(name = "comment_parent")
-    private Set<Comment> comments = new HashSet<>();
+    private Set<Comment> children = new HashSet<>();
 
     @OneToMany(mappedBy = "comment")
     private Set<CommentMeta> commentMetas = new HashSet<>();
